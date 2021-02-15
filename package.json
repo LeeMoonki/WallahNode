@@ -1,15 +1,17 @@
 {
   "name": "wallahnode",
-  "version": "1.0.0",
+  "private": true,
   "description": "",
-  "main": "http.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeeMoonki/WallahNode.git"
+  },
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "moment": "^2.29.1",
-    "mysql": "^2.18.1"
-  }
+  "bugs": {
+    "url": "https://github.com/LeeMoonki/WallahNode/issues"
+  },
+  "homepage": "https://github.com/LeeMoonki/WallahNode#readme"
 }
