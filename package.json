@@ -3,9 +3,7 @@
   "name": "wallahnode",
   "scripts": {
     "express": "yarn workspace wallah-express start",
-    "fastify:start": "yarn workspace wallah-fastify start",
-    "fastify:dev": "yarn workspace wallah-fastify dev",
-    "fastify:test": "yarn workspace wallah-fastify test"
+    "fastify": "yarn workspace wallah-fastify start"
   },
   "workspaces": [
     "servers/*"
