@@ -1,7 +1,7 @@
 // import {
-//   FastifyInstance,
-//   RouteShorthandOptions
+//   FastifyInstance
 // } from '../types';
+// import { RouteShorthandOptions } from 'fastify';
 
 // interface RoutePluginOptions {}
 
@@ -22,7 +22,9 @@
 //   }
 // };
 
-// async function routes(fastify: FastifyInstance, options: RouteShorthandOptions): Promise<void> {
+// interface FullRoutesPluginOptions {}
+
+// async function routes(fastify: FastifyInstance, options: FullRoutesPluginOptions): Promise<void> {
 //   fastify.get<Query, Params>('/first', opts, async (request, reply) => {
 //     return {
 //       first: 'hey!'
