@@ -1,37 +1,26 @@
-// import {
-//   FastifyInstance
-// } from '../types';
-// import { RouteShorthandOptions } from 'fastify';
+import {
+  FastifyInstance
+} from '../types';
 
-// interface RoutePluginOptions {}
+interface IQuerystring {
+  foo: string;
+  bar: number;
+}
+interface IHeaders {
+  'h-Custom'?: string;
+}
 
-// interface Query {}
+interface FullRoutesPluginOptions {}
 
-// interface Params {}
+async function routes(fastify: FastifyInstance, options: FullRoutesPluginOptions): Promise<void> {
+  fastify.get<{
+    Querystring: IQuerystring,
+    Headers: IHeaders
+  }>('/first', {}, async (request, reply) => {
+    return {
+      first: 'hey!'
+    };
+  });
+}
 
-// interface Body {}
-
-// interface Headers {}
-
-// const opts: RouteShorthandOptions = {
-//   schema: {
-//     querystring: {},
-//     params: {},
-//     body: {},
-//     headers: {}
-//   }
-// };
-
-// interface FullRoutesPluginOptions {}
-
-// async function routes(fastify: FastifyInstance, options: FullRoutesPluginOptions): Promise<void> {
-//   fastify.get<Query, Params>('/first', opts, async (request, reply) => {
-//     return {
-//       first: 'hey!'
-//     };
-//   });
-
-//   // fastify.post<>
-// }
-
-// export default routes;
+export default routes;
