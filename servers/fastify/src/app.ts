@@ -20,7 +20,6 @@ app.register(firstRoutes, {
 
 app.register(shortHandRoutes, { prefix: '/short' });
 
-
 function prepare() {
   app.get('/', function(request, reply) {
     reply.send({ hello: 'word' });
