@@ -2,7 +2,7 @@ import fastify from 'fastify';
 import { FastifyInstance } from './types';
 
 import firstRoutes from './routes/first-route';
-// import fullRoutes from './routes/full-routes';
+import shortHandRoutes from './routes/shorthand-routes';
 
 
 
@@ -18,7 +18,7 @@ app.register(firstRoutes, {
   }
 });
 
-// app.register(fullRoutes, { prefix: '/full' });
+app.register(shortHandRoutes, { prefix: '/short' });
 
 
 function prepare() {
