@@ -12,8 +12,6 @@ function start(port: number | string) {
       fastify.log.error(err.message);
       process.exit(1);
     }
-
-    fastify.log.info(`server listening on ${address}`);
   });
 }
 

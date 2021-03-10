@@ -6,7 +6,9 @@ import shortHandRoutes from './routes/shorthand-routes';
 
 
 
-const app: FastifyInstance = fastify({ logger: true });
+const app: FastifyInstance = fastify({ logger: {
+  prettyPrint: true
+} });
 
 app.register(firstRoutes, {
   // if you use `fastify-plugin` this option won't work
