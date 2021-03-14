@@ -1,26 +1,23 @@
 import fastify from 'fastify';
+import fastifyMultipart from 'fastify-multipart';
+import fastifyFormbody from 'fastify-formbody';
+
 import { FastifyInstance } from './types';
 
-import firstRoutes from './routes/first-route';
-import shortHandRoutes from './routes/shorthand-routes';
-
-
+import firstRoutes from './routes/firstRoute';
+import shortHandRoutes from './routes/shorthandRoutes';
+import loginApi from './routes/login';
 
 const app: FastifyInstance = fastify({ logger: {
   prettyPrint: true
 } });
 
-app.register(firstRoutes, {
-  // if you use `fastify-plugin` this option won't work
-  // https://www.fastify.io/docs/latest/Plugins/#route-prefixing-option
-  prefix: '/first',
-  foo: {
-    fooOption1: 100,
-    fooOption2: 'foo',
-  }
-});
+app.register(fastifyFormbody);
+app.register(fastifyMultipart);
 
-app.register(shortHandRoutes, { prefix: '/short' });
+app.register(firstRoutes.routes, firstRoutes.options);
+app.register(shortHandRoutes.routes, shortHandRoutes.options);
+app.register(loginApi.routes, loginApi.options);
 
 function prepare() {
   app.get('/', function(request, reply) {

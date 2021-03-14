@@ -15,9 +15,20 @@ async function routes(fastify: FastifyInstance, options: RoutePluginOptions): Pr
   fastify.get('/', async (request, reply) => {
     // route 접근시 호출되는 스코프
     return {
-      first: 'hey!'
+      first: 'hey!',
+      options,
     };
   });
 }
 
-export default routes;
+const options = {
+  // if you use `fastify-plugin` this option won't work
+  // https://www.fastify.io/docs/latest/Plugins/#route-prefixing-option
+  prefix: '/first',
+  foo: {
+    fooOption1: 100,
+    fooOption2: 'foo',
+  }
+};
+
+export default { routes, options };

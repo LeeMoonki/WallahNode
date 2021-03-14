@@ -43,4 +43,6 @@ async function routes(fastify: FastifyInstance, options: FullRoutesPluginOptions
   });
 }
 
-export default routes;
+const options = { prefix: '/short' };
+
+export default { routes, options };
